@@ -1,2 +1,9 @@
 <h1>Info</h1>
 
+<ul>
+    {{#each data}}
+    <li><strong>{{this.titulo}}:</strong> {{this.descripcion}}</li>
+    {{/each}}
+</ul>
+
+<a href="/"><button>Volver</button></a>
