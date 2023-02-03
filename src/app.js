@@ -1,5 +1,5 @@
 const express = require("express");
-const engine = require("ejs-mate");
+const handlebars = require("express-handlebars");
 const path = require("path");
 const passport = require("passport")
 const session = require("express-session");
@@ -35,9 +35,9 @@ app.use(passport.session())
 // })
 
 //CONFIGURACIÓN EJS
-app.engine("ejs", engine);
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.engine("handlebars", handlebars.engine());
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "public/views"));
 
 //RUTAS
 app.use("/", indexRoute)
